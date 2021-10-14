@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #3B69B7;
+}
+
+body .main {
+    overflow-x: hidden;
+    height: 80vh;
+    width: 100vw;
+}
+
+body .main .title {
+    position: absolute;
+    top: 1rem;
+    left: 5vw;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 400;
+    font-size: 36px;
+    letter-spacing: 2px;
+    color: #fff;
+    opacity: .8;
+    z-index: 1;
+}
+
+body .main .msg {
+    position: absolute;
+    top: 40%;
+    right: 20vw;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: #fff;
+    opacity: .8;
+    z-index: 1;
+}
+
+body .info {
+    overflow-x: hidden;
+    height: 20vh;
+    width: 100%;
+}
+
+body .info .addr {
+    margin-left: 10vw;
+    width: 50%;
+}
+
+body .info .addr h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+    margin: 2rem .25rem 1rem .25rem;
+}
+
+body .info .addr p {
+    font-size: 12px;
+    color: #fff;
+    margin: .25rem 0;
+}
+
+body .map {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    height: 260px;
+    width: 480px;
+    z-index: 2;
+}
+
+body .map iframe {
+    border: 0;
+    border-radius: .5rem;
+    height: 100%;
+    width: 100%;
+}
+
+.masthead-arrow {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    -webkit-transform: rotate( 45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate( 45deg);
+    width: 30px;
+    height: 30px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    opacity: 0.4;
+}
