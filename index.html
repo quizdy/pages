@@ -19,7 +19,7 @@
 <body>
     <div class="main">
         <h2 class="title">東野繁幸税理士事務所</h2>
-        <h2 class="msg"></h2>
+        <h2 class="msg">私たちは地元に根差した税理士事務所として、地域の発展と成長に寄与することを使命と考えております。地元企業の経営が安定することにより、そこで働く人々や家族も元気になり、ひいてはそれが日本経済の発展につながっていくものと考えております。当事務所では、税務・会計に関することはもちろん、お客様の様々なご相談に対応するため、日々研鑚を重ねております。経営に関することでしたらどのようなことでもお気軽にご相談ください。経営者様のベストパートナーとなれるよう、信頼できる税理士事務所を目指して頑張ります。</h2>
     </div>
     <div class="info">
         <div class="addr">
@@ -34,7 +34,7 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3260.8214433637613!2d136.97207291554142!3d35.18600266457862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6003702273af1ee7%3A0x56b9bc4b88a192a1!2z5p2x6YeO57mB5bm456iO55CG5aOr5LqL5YuZ5omA!5e0!3m2!1sja!2sjp!4v1634206943441!5m2!1sja!2sjp"
             allowfullscreen="" loading="lazy"></iframe>
     </div>
-    <!-- <div class="masthead-arrow"></div> -->
+    <div class="masthead-arrow"></div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.js" integrity="sha512-8b0Npb1J3g9Ouc4btqH5lyjwRXdVD6iWMQJTTVeFRzaSA930H6FmeL46AI+YfKYXS5wDQhQqbKAL7+u/jzS4jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
@@ -43,21 +43,41 @@
                 overlay: true,
                 transition: 'fade',
                 transitionDuration: 4000,
-                delay: 20000,
+                delay: 16000,
                 color: 'red',
                 animation: 'random',
-                animationDuration: 20000,
+                animationDuration: 16000,
                 slides: [{
-                    src: './bg.png'
+                    src: './bg.png',
+                    text: ''
                 }, {
-                    src: './bg2.png'
+                    src: './bg2.png',
+                    text: ''
                 }, {
-                    src: './bg3.png'
+                    src: './bg3.png',
+                    text: ''
                 }, {
-                    src: 'https://www.saisoncard.co.jp/credictionary/bussinesscard/d5d1ml0000004mdq-img/eyecatch.jpg'
-                }]
-            });
-        });
+                    src: 'https://www.saisoncard.co.jp/credictionary/bussinesscard/d5d1ml0000004mdq-img/eyecatch.jpg',
+                    text: ''
+                }],
+                walk: (index, slideSettings) => {
+                    $('.main .msg').html(slideSettings.text);
+                }
+            })
+        })
+        $(document).on('click', '.masthead-arrow', (e) => {
+            if ($('.masthead-arrow').hasClass('prev')) {
+                $('.main').vegas('play')
+                $('.main .vegas-slide').removeClass('hide')
+                $('.map').removeClass('hide')
+                $('.masthead-arrow').removeClass('prev')
+            } else {
+                $('.main').vegas('pause')
+                $('.main .vegas-slide').addClass('hide')
+                $('.map').addClass('hide')
+                $('.masthead-arrow').addClass('prev')
+            }
+        })
     </script>
 </body>
 

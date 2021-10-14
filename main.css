@@ -5,8 +5,8 @@ body {
 }
 
 body .main {
-    overflow-x: hidden;
-    height: 80vh;
+    overflow: hidden;
+    height: 78vh;
     width: 100vw;
 }
 
@@ -26,19 +26,20 @@ body .main .title {
 body .main .msg {
     position: absolute;
     top: 40%;
-    right: 20vw;
+    right: 10vw;
     font-family: 'Noto Serif JP', serif;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: 2px;
     color: #fff;
-    opacity: .8;
+    opacity: 0;
     z-index: 1;
+    width: 480px;
 }
 
 body .info {
-    overflow-x: hidden;
-    height: 20vh;
+    overflow: hidden;
+    height: 22vh;
     width: 100%;
 }
 
@@ -62,6 +63,7 @@ body .info .addr p {
 }
 
 body .map {
+    display: block;
     position: absolute;
     bottom: 1rem;
     right: 1rem;
@@ -79,17 +81,100 @@ body .map iframe {
 
 .masthead-arrow {
     position: absolute;
-    bottom: 25px;
+    top: 0;
+    bottom: 20%;
     left: 0;
-    right: 0;
+    right: -90%;
     margin: auto;
-    -webkit-transform: rotate( 45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate( 45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
     width: 30px;
     height: 30px;
     border-right: 2px solid #fff;
     border-bottom: 2px solid #fff;
     opacity: 0.4;
+    cursor: pointer;
+    padding: .25rem;
+}
+
+.masthead-arrow.prev {
+    left: -90%;
+    right: 0;
+    margin: auto;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.hide {
+    display: none!important;
+}
+
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+    body .main .title {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+    body .map {
+        display: block;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    body .main .title {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+    body .map {
+        display: block;
+        height: 260px;
+        width: 380px;
+    }
+    .masthead-arrow {
+        right: -95%;
+    }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+    body .main .title {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+    body .map {
+        display: none;
+    }
+    body .info .addr {
+        width: 80%;
+    }
+    .masthead-arrow {
+        right: -85%;
+    }
+    .masthead-arrow.prev {
+        left: -85%;
+    }
+}
+
+@media all and (max-width: 480px) {
+    body .main .title {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+    body .map {
+        display: none;
+    }
+    body .info .addr {
+        width: 90%;
+    }
+    body .info .addr h2 {
+        margin: 1rem .25rem;
+    }
+    .masthead-arrow {
+        right: -80%;
+    }
+    .masthead-arrow.prev {
+        left: -80%;
+    }
 }
